@@ -1,0 +1,23 @@
+{
+  "name": "codekata---no1-supermarket-kata",
+  "version": "1.0.0",
+  "description": "CodeKata #1 - Supermarket Kata",
+  "main": "main.ts",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jasmine",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean"
+  },
+  "author": "Ioannis Brant-Ioannidis",
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine": "^4.5.0"
+  },
+  "dependencies": {
+    "@types/jasmine": "^4.3.1",
+    "@types/node": "^18.11.17"
+  }
+}
