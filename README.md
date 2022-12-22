@@ -1,2 +1,2 @@
-# kata
-Various Kata exercises
+# KATA
+Various KATA exercises
