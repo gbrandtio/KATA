@@ -18,13 +18,13 @@ export class BinarySearch {
         let arrayLength: number = sortedArray.length;
         let middleItemIndex: number = Math.round(arrayLength / 2);
 
-        for (let i=0; i<this.handlers.length; i++){
+        for (let i = 0; i < this.handlers.length; i++) {
             let element: Handler = this.handlers[i];
-            
+
             if (element.isEndCondition) {
                 return element.handle(sortedArray, x);
             }
-            
+
             if (element.handle(sortedArray, x)) {
                 return this.Search(x, sortedArray.slice(middleItemIndex + 1, arrayLength));
             }
