@@ -1,7 +1,7 @@
 {
   "name": "codekata---no1-supermarket-kata",
   "version": "1.0.0",
-  "description": "CodeKata #1 - Supermarket Kata",
+  "description": "CodeKata #2 - Karate Chop",
   "main": "main.ts",
   "directories": {
     "test": "tests"
