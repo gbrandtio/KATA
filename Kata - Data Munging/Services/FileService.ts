@@ -31,7 +31,7 @@ export class FileService {
         for (let i = 0; i < lines.length; i++) {
             if (i > 1) {
                 let splittedLine: string[] = lines[i].split(/(\s+)/);
-                splittedLine = arraySanitizationService.sanitize(splittedLine);
+                splittedLine = arraySanitizationService.sanitize(splittedLine, ArraySanitizationService.sanitizationRules);
                 mapOfSplittedLines.set(i, splittedLine);
             }
         }
