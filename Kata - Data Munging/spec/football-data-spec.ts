@@ -1,6 +1,5 @@
 import { LeagueDataDto } from "../Models/LeagueDataDto";
 import { BaseOps } from "../Services/BaseOps";
-import { FileService } from "../Services/FileService";
 import { LeagueTableOps } from "../Services/LeagueTableOps";
 
 describe("Test suite for league table data", function () {
