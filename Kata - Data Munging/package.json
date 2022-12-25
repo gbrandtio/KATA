@@ -1,0 +1,13 @@
+{
+  "name": "kata-data-munging",
+  "version": "1.0.0",
+  "description": "CodeKata #4 - Data Munging",
+  "main": "main.ts",
+  "scripts": {
+    "test": "jasmine",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean"
+  },
+  "author": "Ioannis Brant-Ioannidis",
+  "license": "MIT"
+}
