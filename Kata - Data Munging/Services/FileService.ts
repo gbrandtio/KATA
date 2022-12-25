@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import { ArraySanitizationService } from './ArraySanitizationService';
 
 export class FileService {
     /**
@@ -25,28 +26,16 @@ export class FileService {
      */
     public splitLinesBasedOnWhitespaces(lines: string[]): Map<number, string[]> {
         let mapOfSplittedLines: Map<number, string[]> = new Map();
+        let arraySanitizationService: ArraySanitizationService = new ArraySanitizationService();
 
         for (let i = 0; i < lines.length; i++) {
             if (i > 1) {
                 let splittedLine: string[] = lines[i].split(/(\s+)/);
-                splittedLine = this.sanitizeArray(splittedLine);
+                splittedLine = arraySanitizationService.sanitize(splittedLine);
                 mapOfSplittedLines.set(i, splittedLine);
             }
         }
 
         return mapOfSplittedLines;
-    }
-
-    /**
-    * Based on a pre-defined set of rules, this function will sanitize the passed array and return the sanitized array.
-    * 
-    * @param arrayToSanitize The array to apply the sanitization rules on.
-    * @returns The sanitized array.
-    */
-    public sanitizeArray(arrayToSanitize: string[]): string[] {
-        let sanitizedArray: string[] = [];
-        sanitizedArray = arrayToSanitize.filter(entry => entry.trim() != '');
-
-        return sanitizedArray;
     }
 }
