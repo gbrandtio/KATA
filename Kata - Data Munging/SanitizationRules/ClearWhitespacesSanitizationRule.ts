@@ -1,5 +1,9 @@
 import { SanitizationRule } from "./SanitizationRule";
 
+/**
+ * Implements an array sanitization rule responsible for removing all whitespaces from an array.
+ * @implements {SanitizationRule}
+ */
 export class ClearWhitespacesSanitizationRule implements SanitizationRule<string[]> {
 
     /**

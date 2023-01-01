@@ -1,6 +1,10 @@
 import { LeagueDataDto } from "../Models/LeagueDataDto";
 import { BaseOps } from "./BaseOps";
 
+/**
+ * Defines data operations for the league table.
+ * @extends BaseOps
+ */
 export class LeagueTableOps extends BaseOps {
     /**
      * Calculates and pretty prints the details of the team with the minimum goals spread.
