@@ -1,8 +1,8 @@
-export class EmptyArrayHandler implements Handler {
-    nextHandler: Handler;
+export class EmptyArrayHandler implements BaseEndConditionHandler {
+    nextHandler: BaseEndConditionHandler;
     isEndCondition: boolean = true;
 
-    setNext(nextHandler: Handler): void {
+    setNext(nextHandler: BaseEndConditionHandler): void {
         this.nextHandler = nextHandler;
     }
 

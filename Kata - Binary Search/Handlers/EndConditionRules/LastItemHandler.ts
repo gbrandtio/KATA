@@ -1,8 +1,8 @@
-export class LastItemHandler implements Handler {
-    nextHandler: Handler;
+export class LastItemHandler implements BaseEndConditionHandler {
+    nextHandler: BaseEndConditionHandler;
     isEndCondition: boolean = true;
 
-    setNext(nextHandler: Handler): void {
+    setNext(nextHandler: BaseEndConditionHandler): void {
         this.nextHandler = nextHandler;
     }
 
