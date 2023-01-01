@@ -15,7 +15,13 @@ export class BinarySearch {
     private endConditionHandlers: BaseEndConditionHandler[] = [];
     private binarySearchHandlers: BaseBinarySearchHandler[] = [];
 
-    public Search(itemToSearch: number, sortedArray: number[]): boolean {
+    /**
+     * Executes the Binary Search algorithm by executing the @see EndConditionRules and @see BinarySearchRules handlers.
+     * @param itemToSearch The item to search on the array.
+     * @param sortedArray A sorted array of numbers.
+     * @returns true if the passed number exists on the passed sorted array.
+     */
+    public search(itemToSearch: number, sortedArray: number[]): boolean {
         for (let i = 0; i < this.endConditionHandlers.length; i++) {
             let endConditionHandler: BaseEndConditionHandler = this.endConditionHandlers[i];
             return endConditionHandler.handle(sortedArray, itemToSearch);
@@ -24,7 +30,7 @@ export class BinarySearch {
         for (let i=0; i < this.binarySearchHandlers.length; i++) {
             let binarySearchHandler: BaseBinarySearchHandler = this.binarySearchHandlers[i];
             let handledSortedArray: number[] = binarySearchHandler.handle(sortedArray, itemToSearch);
-            return this.Search(itemToSearch, handledSortedArray);
+            return this.search(itemToSearch, handledSortedArray);
         }
 
         return false;

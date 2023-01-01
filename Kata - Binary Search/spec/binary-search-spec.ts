@@ -10,7 +10,7 @@ describe("Test suite for binary search", function () {
         let emptyArray: number[] = [];
         let numberToSearch: number = 5;
 
-        found = binarySearch.Search(numberToSearch, emptyArray);
+        found = binarySearch.search(numberToSearch, emptyArray);
         expect(found).toBe(false);
     });
 
@@ -18,7 +18,7 @@ describe("Test suite for binary search", function () {
         let sortedArray: number[] = [1,2,3,4,5,6];
         let numberToSearch: number = 5;
 
-        found = binarySearch.Search(numberToSearch, sortedArray);
+        found = binarySearch.search(numberToSearch, sortedArray);
         expect(found).toBe(true);
     });
 
@@ -26,7 +26,7 @@ describe("Test suite for binary search", function () {
         let sortedArray: number[] = [1,2,3,4,5,6,7,8];
         let numberToSearch: number = 5;
 
-        found = binarySearch.Search(numberToSearch, sortedArray);
+        found = binarySearch.search(numberToSearch, sortedArray);
         expect(found).toBe(true);
     });
 
@@ -34,7 +34,7 @@ describe("Test suite for binary search", function () {
         let sortedArray: number[] = [1,2,3,4,5,6,7,8,9];
         let numberToSearch: number = 4;
 
-        found = binarySearch.Search(numberToSearch, sortedArray);
+        found = binarySearch.search(numberToSearch, sortedArray);
         expect(found).toBe(true);
     });
 
@@ -42,7 +42,7 @@ describe("Test suite for binary search", function () {
         let sortedArray: number[] = [1,2,3,4,5,6,7,8,9];
         let numberToSearch: number = 5;
 
-        found = binarySearch.Search(numberToSearch, sortedArray);
+        found = binarySearch.search(numberToSearch, sortedArray);
         expect(found).toBe(true);
     });
 
@@ -50,7 +50,7 @@ describe("Test suite for binary search", function () {
         let sortedArray: number[] = [1,2,3,4,5,6,7,8];
         let numberToSearch: number = 1;
 
-        found = binarySearch.Search(numberToSearch, sortedArray);
+        found = binarySearch.search(numberToSearch, sortedArray);
         expect(found).toBe(true);
     });
 
@@ -58,7 +58,7 @@ describe("Test suite for binary search", function () {
         let sortedArray: number[] = [1,2,3,4,5,6,7,8];
         let numberToSearch: number = 8;
 
-        found = binarySearch.Search(numberToSearch, sortedArray);
+        found = binarySearch.search(numberToSearch, sortedArray);
         expect(found).toBe(true);
     });
 
@@ -66,7 +66,7 @@ describe("Test suite for binary search", function () {
         let sortedArray: number[] = [1,2,3,4,5,6,7,8,9];
         let numberToSearch: number = 1;
 
-        found = binarySearch.Search(numberToSearch, sortedArray);
+        found = binarySearch.search(numberToSearch, sortedArray);
         expect(found).toBe(true);
     });
 
@@ -74,7 +74,7 @@ describe("Test suite for binary search", function () {
         let sortedArray: number[] = [1,2,3,4,5,6,7,8,9];
         let numberToSearch: number = 9;
 
-        found = binarySearch.Search(numberToSearch, sortedArray);
+        found = binarySearch.search(numberToSearch, sortedArray);
         expect(found).toBe(true);
     });
 });
