@@ -2,7 +2,8 @@ import { BinarySearch } from "../main";
 
 describe("Test suite for binary search", function () {
     let binarySearch: BinarySearch = new BinarySearch();
-    binarySearch.initializeChain();
+    binarySearch.initializeEndConditions();
+    binarySearch.initializeBinarySearchHandlers();
     let found: boolean = false;
 
     it("returns false if the passed array is empty", function () {

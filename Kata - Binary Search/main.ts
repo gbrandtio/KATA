@@ -1,7 +1,7 @@
-import { EmptyArrayHandler } from "./Handlers/EmptyArrayHandler";
-import { LastItemHandler } from "./Handlers/LastItemHandler";
-import { MiddleItemHandler } from "./Handlers/MiddleItemHandler";
-import { WhichHalfHandler } from "./Handlers/WhichHalfHandler";
+import { EmptyArrayHandler } from "./Handlers/EndConditionRules/EmptyArrayHandler";
+import { LastItemHandler } from "./Handlers/EndConditionRules/LastItemHandler";
+import { MiddleItemHandler } from "./Handlers/EndConditionRules/MiddleItemHandler";
+import { WhichHalfHandler } from "./Handlers/BinarySearchRules/WhichHalfHandler";
 
 /**
  * A binary chop (sometimes called the more prosaic binary search) finds the position of value in a sorted array of values. 
@@ -12,43 +12,46 @@ import { WhichHalfHandler } from "./Handlers/WhichHalfHandler";
  * It stops when it finds the value it is looking for, or when it runs out of array to search.
  */
 export class BinarySearch {
-    handlers: Handler[] = [];
+    private endConditionHandlers: BaseEndConditionHandler[] = [];
+    private binarySearchHandlers: BaseBinarySearchHandler[] = [];
 
-    public Search(x: number, sortedArray: number[]): boolean {
-        let arrayLength: number = sortedArray.length;
-        let middleItemIndex: number = Math.round(arrayLength / 2);
+    public Search(itemToSearch: number, sortedArray: number[]): boolean {
+        for (let i = 0; i < this.endConditionHandlers.length; i++) {
+            let endConditionHandler: BaseEndConditionHandler = this.endConditionHandlers[i];
+            return endConditionHandler.handle(sortedArray, itemToSearch);
+        }
 
-        for (let i = 0; i < this.handlers.length; i++) {
-            let element: Handler = this.handlers[i];
-
-            if (element.isEndCondition) {
-                return element.handle(sortedArray, x);
-            }
-
-            if (element.handle(sortedArray, x)) {
-                return this.Search(x, sortedArray.slice(middleItemIndex + 1, arrayLength));
-            }
-            else {
-                return this.Search(x, sortedArray.slice(0, middleItemIndex));
-            }
+        for (let i=0; i < this.binarySearchHandlers.length; i++) {
+            let binarySearchHandler: BaseBinarySearchHandler = this.binarySearchHandlers[i];
+            let handledSortedArray: number[] = binarySearchHandler.handle(sortedArray, itemToSearch);
+            return this.Search(itemToSearch, handledSortedArray);
         }
 
         return false;
     }
 
-    public initializeChain(): void {
-        let emptyArrayHandler: Handler = new EmptyArrayHandler();
-        let lastItemHandler: Handler = new LastItemHandler();
-        let middleItemHandler: Handler = new MiddleItemHandler();
-        let whichHalfHandler: Handler = new WhichHalfHandler();
+    /**
+     * Initializes the CoR for binary search end conditions.
+     */
+    public initializeEndConditions(): void {
+        let emptyArrayHandler: BaseEndConditionHandler = new EmptyArrayHandler();
+        let lastItemHandler: BaseEndConditionHandler = new LastItemHandler();
+        let middleItemHandler: BaseEndConditionHandler = new MiddleItemHandler();
 
         emptyArrayHandler.setNext(lastItemHandler);
         lastItemHandler.setNext(middleItemHandler);
-        middleItemHandler.setNext(whichHalfHandler);
 
-        this.handlers.push(emptyArrayHandler);
-        this.handlers.push(lastItemHandler);
-        this.handlers.push(middleItemHandler);
-        this.handlers.push(whichHalfHandler);
+        this.endConditionHandlers.push(emptyArrayHandler);
+        this.endConditionHandlers.push(lastItemHandler);
+        this.endConditionHandlers.push(middleItemHandler);
+    }
+
+    /**
+     * Initializes the CoR for binary search business logic.
+     */
+    public initializeBinarySearchHandlers(): void {
+        let whichHalfHandler: BaseBinarySearchHandler = new WhichHalfHandler();
+
+        this.binarySearchHandlers.push(whichHalfHandler);
     }
 }
