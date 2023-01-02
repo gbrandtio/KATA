@@ -19,19 +19,25 @@ export class WhichHalfHandler implements BaseBinarySearchHandler {
      * @returns The left or right half of the array, based on the comparison of the @see itemToSearch and the middle item of the @see sortedArray array.
      */
     handle(sortedArray: number[], itemToSearch: number): number[] {
-        let isItemOnSecondHalfOfTheArray: boolean = false;
-        let middleItemIndex: number = sortedArray[sortedArray.length / 2];
-        isItemOnSecondHalfOfTheArray = this.IsGreaterThan(itemToSearch, middleItemIndex);
+        console.log("Invoked WhichHalfHandler");
 
-        if (isItemOnSecondHalfOfTheArray) {
-            return sortedArray.slice(middleItemIndex + 1, sortedArray.length)
+        let isItemOnSecondHalfOfTheArray: boolean = false;
+        let middleItemIndex: number = Math.floor((sortedArray.length + 1) / 2);
+        console.log("middle item index: " + middleItemIndex);
+
+        if (itemToSearch > sortedArray[middleItemIndex]) {
+            console.log("second half of array");
+            return sortedArray.slice(middleItemIndex, sortedArray.length);
+        }
+        else if (itemToSearch < sortedArray[middleItemIndex]) {
+            sortedArray = sortedArray.slice(0, middleItemIndex);
+            console.log("first half sliced: " + JSON.stringify(sortedArray));
+        }
+        else {
+            sortedArray = [];
+            sortedArray.push(itemToSearch);
         }
 
-        return sortedArray.slice(0, middleItemIndex);
-    }
-
-    public IsGreaterThan(x: number, y: number): boolean {
-        if (x > y) return true;
-        return false;
+        return [];
     }
 }

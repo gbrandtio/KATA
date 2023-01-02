@@ -1,5 +1,8 @@
 import { BinarySearch } from "../main";
 
+/**
+ * General tests for binary search.
+ */
 describe("Test suite for binary search", function () {
     let binarySearch: BinarySearch = new BinarySearch();
     binarySearch.initializeEndConditions();

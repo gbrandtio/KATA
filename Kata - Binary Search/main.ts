@@ -1,6 +1,5 @@
 import { EmptyArrayHandler } from "./Handlers/EndConditionRules/EmptyArrayHandler";
 import { LastItemHandler } from "./Handlers/EndConditionRules/LastItemHandler";
-import { MiddleItemHandler } from "./Handlers/EndConditionRules/MiddleItemHandler";
 import { WhichHalfHandler } from "./Handlers/BinarySearchRules/WhichHalfHandler";
 
 /**
@@ -22,14 +21,17 @@ export class BinarySearch {
      * @returns true if the passed number exists on the passed sorted array.
      */
     public search(itemToSearch: number, sortedArray: number[]): boolean {
+        
         for (let i = 0; i < this.endConditionHandlers.length; i++) {
             let endConditionHandler: BaseEndConditionHandler = this.endConditionHandlers[i];
-            return endConditionHandler.handle(sortedArray, itemToSearch);
+            if (endConditionHandler.isMatch(sortedArray)) {
+                return endConditionHandler.handle(sortedArray, itemToSearch);
+            }
         }
 
-        for (let i=0; i < this.binarySearchHandlers.length; i++) {
+        for (let i = 0; i < this.binarySearchHandlers.length; i++) {
             let binarySearchHandler: BaseBinarySearchHandler = this.binarySearchHandlers[i];
-            let handledSortedArray: number[] = binarySearchHandler.handle(sortedArray, itemToSearch);
+            let handledSortedArray: any = binarySearchHandler.handle(sortedArray, itemToSearch);
             return this.search(itemToSearch, handledSortedArray);
         }
 
@@ -42,14 +44,11 @@ export class BinarySearch {
     public initializeEndConditions(): void {
         let emptyArrayHandler: BaseEndConditionHandler = new EmptyArrayHandler();
         let lastItemHandler: BaseEndConditionHandler = new LastItemHandler();
-        let middleItemHandler: BaseEndConditionHandler = new MiddleItemHandler();
 
         emptyArrayHandler.setNext(lastItemHandler);
-        lastItemHandler.setNext(middleItemHandler);
 
         this.endConditionHandlers.push(emptyArrayHandler);
         this.endConditionHandlers.push(lastItemHandler);
-        this.endConditionHandlers.push(middleItemHandler);
     }
 
     /**

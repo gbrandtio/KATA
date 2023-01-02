@@ -18,6 +18,8 @@ export class EmptyArrayHandler implements BaseEndConditionHandler {
      * @returns False if the passed array is empty.
      */
     public handle(sortedArray: number[], itemToSearch: number): boolean {
+        console.log("Invoked EmptyArrayHandler");
+
         let handled: boolean = true;
 
         if (sortedArray.length == 0) {
@@ -26,4 +28,15 @@ export class EmptyArrayHandler implements BaseEndConditionHandler {
 
         return handled;
     }
+
+    /**
+     * Defines the execution conditions of this rule.
+     * 
+     * @param sortedArray The array to check the length
+     * @returns true if the @see {sortedArray} length is 0, otherwise false.
+     */
+        public isMatch(sortedArray: number[]): boolean {
+            if (sortedArray.length === 0) return true;
+            return false;
+        }
 }
