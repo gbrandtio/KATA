@@ -23,21 +23,18 @@ export class WhichHalfHandler implements BaseBinarySearchHandler {
 
         let isItemOnSecondHalfOfTheArray: boolean = false;
         let middleItemIndex: number = Math.floor((sortedArray.length + 1) / 2);
-        console.log("middle item index: " + middleItemIndex);
 
         if (itemToSearch > sortedArray[middleItemIndex]) {
-            console.log("second half of array");
-            return sortedArray.slice(middleItemIndex, sortedArray.length);
+            sortedArray = sortedArray.slice(middleItemIndex, sortedArray.length);
         }
         else if (itemToSearch < sortedArray[middleItemIndex]) {
             sortedArray = sortedArray.slice(0, middleItemIndex);
-            console.log("first half sliced: " + JSON.stringify(sortedArray));
         }
         else {
             sortedArray = [];
             sortedArray.push(itemToSearch);
         }
 
-        return [];
+        return sortedArray;
     }
 }
