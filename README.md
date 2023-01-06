@@ -1,6 +1,8 @@
 # KATA
 This repository consists of various KATA exercises with various iterations on each KATA. The purpose of it is to practice in new coding styles and apply clean code principles, design patterns and coding practices.
 
+Most of the KATA exercises are deriving from [CodeKata](http://codekata.com/). However, as explained, on this repository the main focus is to practice on clean code and best practices - along with completing the milestones/questions/tasks of each KATA (which is a second priority, but hopefully the goals overlap on most of the KATAs).
+
 ## What is KATA ?
 Definition: A system of individual training exercises for practicioners of karate and other martial arts. 
 Simply, KATA involves deliberate, repetitive practice in order to reach mastery. For Software Engineering and Business, KATA can be defined with the same nuances taken from martial arts, incorporating repetitive exercises and problem solving etc until a best practice becomes second nature.
