@@ -1,0 +1,11 @@
+{
+  "name": "kata-chain-of-promises",
+  "version": "1.0.0",
+  "description": "A cleaner way to nested promises",
+  "main": "main.ts",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "author": "Ioannis Brant-Ioannidis",
+  "license": "MIT"
+}
