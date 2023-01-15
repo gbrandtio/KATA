@@ -9,7 +9,8 @@ export class SecondConcreteDummyPromise implements BaseDummyPromise<string> {
         this.timeout = timeout;
     }
 
-    public async execute(): Promise<string> {
+    public async execute(data: any): Promise<string> {
+        console.log("Received data: " + data);
         let mockRequest: MockRequest = new MockRequest(this.expectDummyPromiseToBeResolved, "Data result from SecondConcretePromise");
         const timeoutPromise: Promise<any> = new Promise((resolve, reject) => setTimeout(reject, this.timeout, "Second promise timed out"));
 

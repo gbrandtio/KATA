@@ -1,3 +1,3 @@
 export interface BaseDummyPromise<T> {
-    execute(): Promise<T>
+    execute(data: T): Promise<T>
 }

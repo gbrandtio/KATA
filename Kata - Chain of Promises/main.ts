@@ -11,9 +11,10 @@ export class Main {
         let promiseExecutionResult: any;
 
         for (let i = 0; i < chainOfPromises.length; i++) {
-            promiseExecutionResult = await chainOfPromises[i].execute();
+            promiseExecutionResult = await chainOfPromises[i].execute(promiseExecutionResult);
         }
 
+        console.log("Promise execution result: " + JSON.stringify(promiseExecutionResult));
         return promiseExecutionResult;
     }
 }

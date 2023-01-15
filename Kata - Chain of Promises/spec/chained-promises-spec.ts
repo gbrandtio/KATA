@@ -35,6 +35,13 @@ describe("The execution of the chain of promises", function () {
         expect(result).toBe(false);
     });
 
+    it("fails in case the second promise is not resolved", async function () {
+        const chainOfPromises: BaseDummyPromise<any>[] = [new FirstConcreteDummyPromise(true, 6000), new SecondConcreteDummyPromise(false, 6000)];
+        
+        const result = await executeChainOfPromisesParameterized(chainOfPromises);
+        expect(result).toBe(false);
+    });
+
     async function executeChainOfPromisesParameterized(chainOfPromises: BaseDummyPromise<any>[]): Promise<boolean> {
         let promiseResult: boolean = false;
 

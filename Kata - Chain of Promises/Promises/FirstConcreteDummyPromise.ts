@@ -9,7 +9,8 @@ export class FirstConcreteDummyPromise implements BaseDummyPromise<boolean> {
         this.timeout = timeout;
     }
 
-    public async execute(): Promise<boolean> {
+    public async execute(data: any): Promise<boolean> {
+        console.log("Received data: " + data);
         let mockRequest: MockRequest = new MockRequest(this.expectDummyPromiseToBeResolved, "Data result from FirstConcretePromise");
         const timeoutPromise: Promise<any> = new Promise((resolve, reject) => setTimeout(reject, this.timeout, "First promise timed out"));
 
