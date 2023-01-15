@@ -1,5 +1,4 @@
 import { BaseDummyPromise } from "./Promises/BaseDummyPromise"
-import { SecondConcreteDummyPromise } from "./Promises/SecondConcreteDummyPromise";
 
 export class Main {
     /**
