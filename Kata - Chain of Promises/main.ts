@@ -1,4 +1,5 @@
 import { BaseDummyPromise } from "./Promises/BaseDummyPromise"
+import { SecondConcreteDummyPromise } from "./Promises/SecondConcreteDummyPromise";
 
 export class Main {
     /**
@@ -11,10 +12,11 @@ export class Main {
         let promiseExecutionResult: any;
 
         for (let i = 0; i < chainOfPromises.length; i++) {
-            promiseExecutionResult = await chainOfPromises[i].execute(promiseExecutionResult);
+            if (chainOfPromises[i].isMatch(promiseExecutionResult)) {
+                promiseExecutionResult = await chainOfPromises[i].execute(promiseExecutionResult);
+            }
         }
 
-        console.log("Promise execution result: " + JSON.stringify(promiseExecutionResult));
         return promiseExecutionResult;
     }
 }
