@@ -10,18 +10,19 @@ export class Main {
         let customerIsValid = false;
 
         if (this.customer.mainCustomer) {
-            if (!this.customer.company) {
-                customerIsValid = true;
-            } else {
+            if (this.customer.company) {
                 customerIsValid = false;
+            } else {
+                customerIsValid = true;
+                
             }
         }
 
         if (this.customer.additionalCustomer) {
             if (!this.customer.company) {
-                customerIsValid = true;
-            } else {
                 customerIsValid = false;
+            } else {
+                customerIsValid = true;
             }
         }
         return customerIsValid;
