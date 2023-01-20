@@ -1,0 +1,23 @@
+{
+  "name": "kata-refactor-complex-get",
+  "version": "1.0.0",
+  "description": "Refactoring complex get demonstration for CodeReview answer",
+  "main": "main.ts",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbrandtio/KATA.git#main"
+  },
+  "keywords": [
+    "clean",
+    "code"
+  ],
+  "author": "Ioannis Brant-Ioannidis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gbrandtio/KATA/issues"
+  },
+  "homepage": "https://github.com/gbrandtio/KATA/tree/main#readme"
+}
