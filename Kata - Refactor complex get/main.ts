@@ -6,7 +6,7 @@ export class Main {
         this.customer = customer;
     }
 
-    get customersAreNotValid(): boolean {
+    get validateCustomer(): boolean {
         let customerIsValid = false;
 
         if (this.customer.mainCustomer) {
