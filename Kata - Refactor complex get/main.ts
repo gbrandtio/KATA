@@ -14,12 +14,11 @@ export class Main {
                 customerIsValid = false;
             } else {
                 customerIsValid = true;
-                
             }
         }
 
         if (this.customer.additionalCustomer) {
-            if (!this.customer.company) {
+            if (this.customer.company) {
                 customerIsValid = false;
             } else {
                 customerIsValid = true;
