@@ -20,3 +20,4 @@ The proposed approach supports a bunch of design principles, especially the ones
 ## Further Discussion
 For further discussion feel free to comment on the below sources, where the implementation and approaches taken on this KATA are discussed:
 - Stack Overflow: [Writing Clean Code with Nested Promises](https://stackoverflow.com/questions/15913448/writing-clean-code-with-nested-promises/75126266#75126266)
+- Medium: [Clean: Clean Way to Nested Promises](https://ioannis-brandt.medium.com/clean-way-to-nested-promises-5c2f72d3841c)
