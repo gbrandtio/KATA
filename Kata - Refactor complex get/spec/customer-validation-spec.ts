@@ -1,10 +1,10 @@
-import { AdditionalCustomerCompanyDefinedHandler } from "../../Handlers/AdditionalCustomerCompanyDefinedHandler";
-import { AdditionalCustomerHandler } from "../../Handlers/AdditionalCustomerHandler";
-import { BaseHandler } from "../../Handlers/BaseHandler";
-import { MainCustomerCompanyDefinedHandler } from "../../Handlers/MainCustomerCompanyDefinedHandler";
-import { MainCustomerHandler } from "../../Handlers/MainCustomerHandler";
-import { Main } from "../../main";
-import { Customer } from "../../Models/Customer";
+import { AdditionalCustomerCompanyDefinedHandler } from "../Handlers/AdditionalCustomerCompanyDefinedHandler";
+import { AdditionalCustomerHandler } from "../Handlers/AdditionalCustomerHandler";
+import { BaseHandler } from "../Handlers/BaseHandler";
+import { MainCustomerCompanyDefinedHandler } from "../Handlers/MainCustomerCompanyDefinedHandler";
+import { MainCustomerHandler } from "../Handlers/MainCustomerHandler";
+import { Main } from "../main";
+import { Customer } from "../Models/Customer";
 
 describe("The validation of a customer", function () {
     const mainCustomerHandler: BaseHandler = constructMainCustomerValidationHandlersChain();
