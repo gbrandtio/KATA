@@ -10,6 +10,18 @@ The goal of this Kata is to provide a clean way of refactoring the complex `get`
 - Implementation of Chain of Responsibility.
 - Common code extraction.
 
+## Benefits
+By following CoR we can safely say that our code supports the following:
+
+- The validation rules order, logic and availability **can be changed on demand / even on runtime**. This gives flexibility for adhering to business requirements / changes with agility and by avoiding **ripple effects**.
+- **Single Responsibility Principle:** Every Handler class has only one reason to change - if the validation rule that implements changes.
+- **Open/Closed Principle:** The implementation is open for extension but closed for modification. We can add new Handlers in our chains or change the order of the chain without having to alter existing code.
+
+## Further Discussion
+If you find the approach taken on this implementation intriguing, feel free to upvote or continue the conversation on:
+- Code Review: [Complex get statement in Typescript](https://codereview.stackexchange.com/questions/282629/complex-statement-in-typescript-get/282636#282636).
+- Medium: [Clean: Refactoring a complex get](https://ioannis-brandt.medium.com/clean-refactoring-a-complex-get-b6280f3c3137).
+
 ## Complex get that needs refactoring
 ```
    get customersAreNotValid(): boolean {

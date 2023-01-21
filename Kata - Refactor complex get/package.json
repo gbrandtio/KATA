@@ -4,7 +4,7 @@
   "description": "Refactoring complex get demonstration for CodeReview answer",
   "main": "main.ts",
   "scripts": {
-    "test": "test"
+    "test": "jasmine"
   },
   "repository": {
     "type": "git",
