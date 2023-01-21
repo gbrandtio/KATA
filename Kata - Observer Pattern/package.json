@@ -1,0 +1,15 @@
+{
+  "name": "kata-observer-pattern",
+  "version": "1.0.0",
+  "description": "Kata to practice the implementation of the Observer design pattern.",
+  "main": "main.ts",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "keywords": [
+    "clean",
+    "code"
+  ],
+  "author": "Ioannis Brant-Ioannidis",
+  "license": "MIT"
+}
