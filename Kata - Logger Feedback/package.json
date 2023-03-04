@@ -1,0 +1,14 @@
+{
+  "name": "kata-logger-feedback",
+  "version": "1.0.0",
+  "description": "KATA to provide feedback on the Code Review question https://codereview.stackexchange.com/questions/210243/typescript-logger-class",
+  "main": "main.ts",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "typescript"
+  ],
+  "author": "Ioannis Brant-Ioannidis",
+  "license": "MIT"
+}
