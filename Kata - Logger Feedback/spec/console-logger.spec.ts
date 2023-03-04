@@ -1,6 +1,6 @@
 import { BaseLogger } from "../Architecture/BaseLogger";
-import { ConsoleLogger } from "../Loggers/ConsoleLogger";
-import { LoggerConfig } from "../Models/LoggerConfig";
+import { BaseLoggerCreator } from "../LoggerFactory/BaseLoggerCreator";
+import { ConsoleLoggerCreator } from "../LoggerFactory/ConsoleLoggerCreator";
 import { LogType } from "../Models/LogTypeDto";
 
 describe("Console logger must", function(){
@@ -10,7 +10,8 @@ describe("Console logger must", function(){
         spyOn(console, 'error');
     });
 
-    let consoleLogger: BaseLogger = new ConsoleLogger(new LoggerConfig());
+    let consoleLoggerCreator: BaseLoggerCreator = new ConsoleLoggerCreator();
+    let consoleLogger: BaseLogger = consoleLoggerCreator.createDefaultLogger();
     
     it("output an information message to the console if the passed LogType is INFO", function() {
         consoleLogger.log(LogType.INFO, "Information message");
