@@ -8,7 +8,7 @@ export interface BaseObservable {
     attach(observer: BaseObserver): void;
 
     /**
-     * Unsubscribes an observer from the observable, so that it doesn't receives any new updates.
+     * Unsubscribes an observer from the observable, so that it doesn't receive any new updates.
      * @param observer The observer to be unsubsribed.
      */
     detach(observer: BaseObserver): boolean;
