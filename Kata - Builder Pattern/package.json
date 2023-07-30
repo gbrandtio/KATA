@@ -1,0 +1,11 @@
+{
+  "name": "kata-builder-pattern",
+  "version": "1.0.0",
+  "description": "Exercising the Builder Creational Design Pattern",
+  "main": "main.ts",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Ioannis Brant-Ioannidis",
+  "license": "MIT"
+}
