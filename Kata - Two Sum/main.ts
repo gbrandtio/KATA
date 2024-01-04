@@ -3,7 +3,7 @@ export class Calculator {
         let pos0: number = -1;
         let pos1: number = -2;
 
-        for (let i=0; i<arr.length; i++) {
+        for (let i=0; i<arr.length - 1; i++) {
             let firstPositionToCheck: number = arr[i];
 
             for (let j=i+1; j<arr.length; j++) {
