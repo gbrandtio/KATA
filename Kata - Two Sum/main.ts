@@ -1,20 +1,20 @@
 export class Calculator {
     public calculateTarget(arr: number[], target: number): number[] {
-        let pos0: number = -1;
-        let pos1: number = -2;
+        let positionOfFirstAddend: number = -1;
+        let positionOfSecondAddend: number = -2;
 
-        for (let i=0; i<arr.length - 1; i++) {
-            let firstPositionToCheck: number = arr[i];
+        for (let i = 0; i < arr.length - 1; i++) {
+            let previousPositionToCheck: number = arr[i];
 
-            for (let j=i+1; j<arr.length; j++) {
-                let secondPositionToCheck: number = arr[j];
-                if (firstPositionToCheck + secondPositionToCheck == target) {
-                    pos0 = i;
-                    pos1 = j;
+            for (let j = i + 1; j < arr.length; j++) {
+                let nextPositionToCheck: number = arr[j];
+                if (previousPositionToCheck + nextPositionToCheck == target) {
+                    positionOfFirstAddend = i;
+                    positionOfSecondAddend = j;
                 }
             }
         }
 
-        return [pos0, pos1];
+        return [positionOfFirstAddend, positionOfSecondAddend];
     }
 }
