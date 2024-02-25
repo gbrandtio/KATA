@@ -38,9 +38,27 @@ describe("The calculated array positions", function () {
         expect(result[1]).toBe(arrayWithResultOnEdges.length - 1);
     });
 
-    it("have an output of [0,1] for the given [2,7,11,15] array", function () {
+    it("have an output of [0,1] for the given [2,7,11,15] array and target=9", function () {
         let arrayFromReadmeExample: number[] = [2,7,11,15];
         let target: number = 9;
+
+        let result: number[] = calculator.calculateTarget(arrayFromReadmeExample, target);
+        expect(result[0]).toBe(0);
+        expect(result[1]).toBe(1);
+    });
+
+    it("have an output of [1,2] for the given [3,2,4] array and target=6", function () {
+        let arrayFromReadmeExample: number[] = [3,2,4];
+        let target: number = 6;
+
+        let result: number[] = calculator.calculateTarget(arrayFromReadmeExample, target);
+        expect(result[0]).toBe(1);
+        expect(result[1]).toBe(2);
+    });
+
+    it("have an output of [0,1] for the given [3,3] array and target=6", function () {
+        let arrayFromReadmeExample: number[] = [3,3];
+        let target: number = 6;
 
         let result: number[] = calculator.calculateTarget(arrayFromReadmeExample, target);
         expect(result[0]).toBe(0);
